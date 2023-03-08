@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>You Tube Data</title>
+  
+  <link rel="stylesheet" href="../static/main.css">
+
+</head>
+
+<body>
+
+  <div class="table-users">
+
+   <div class="header" style="text-align: center">You Tube Search Data</div>
+
+   <table cellspacing="0">
+      <tr>
+         <th>Search Term</th>
+         <th>Link</th>
+         <th>Thumbnail</th>
+         <th>Title</th>
+         <th>Views</th>
+         <th>Time</th>
+      </tr>
+         {% for row in data %}
+      <tr>
+         <td>{{row['Search Term']}}</td>
+         <td><a href="{{row['Link']}}">{{row['Link']}}</a></td>
+         <td>
+            <img src="{{row['Thumbnail']}}"></img><br>
+            {{row['Thumbnail']}}
+         </td>
+         <td>{{row['Title']}}</td>
+         <td>{{row['Views']}}</td>
+         <td>{{row['Time']}} </td>
+       {% endfor %}
+   </table>
+
+  </div>
+
+</body>
+
+</html>
